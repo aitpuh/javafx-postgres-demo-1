@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="java_db@jangels.bounceme.net" uuid="4663fbed-fee6-44b7-b9d8-16d00a83a19d">
+      <database-info product="PostgreSQL" version="9.2.23" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>demo_user</user-name>
+      <introspection-schemas>java_db:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

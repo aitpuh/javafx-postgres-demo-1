@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <HBox>
+            <TextField fx:id="description" />
+            <DatePicker fx:id="dueDate" />
+            <Button fx:id="addButton" text="+" onAction="#insert" />
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="tasksView" onMouseClicked="#markTask">
+            <columns>
+                <TableColumn text="Task description">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Due date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="duedate" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Complete">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="complete" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <Button fx:id="reloadButton" text="Reload tasks" onAction="#reload" />
+    </bottom>
+</BorderPane>
