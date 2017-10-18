@@ -43,6 +43,7 @@ public class Controller {
 
        dueDate.setValue(LocalDate.now());
        reload(null);
+       //adding a random comment
     }
 
 
