@@ -27,8 +27,8 @@
     </database>
     <schema id="9" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-10-10.19:24:38.523</IntrospectionTimestamp>
-      <IntrospectionStateNumber>2242</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-10-25.10:40:19.916</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2288</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -57,7 +57,15 @@
       <ObjectId>16704</ObjectId>
       <StateNumber>2242</StateNumber>
     </table>
-    <column id="17" parent="16" name="task_id">
+    <table id="17" parent="9" name="user_tasks">
+      <ObjectId>16749</ObjectId>
+      <StateNumber>2288</StateNumber>
+    </table>
+    <table id="18" parent="9" name="users">
+      <ObjectId>16744</ObjectId>
+      <StateNumber>2287</StateNumber>
+    </table>
+    <column id="19" parent="16" name="task_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -65,31 +73,78 @@
       <SequenceName>tasks_task_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;tasks_task_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="18" parent="16" name="description">
+    <column id="20" parent="16" name="description">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <StateNumber>2191</StateNumber>
     </column>
-    <column id="19" parent="16" name="duedate">
+    <column id="21" parent="16" name="duedate">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>2191</StateNumber>
     </column>
-    <column id="20" parent="16" name="complete">
+    <column id="22" parent="16" name="complete">
       <Position>4</Position>
       <DataType>boolean|0</DataType>
       <StateNumber>2193</StateNumber>
       <DefaultExpression>false</DefaultExpression>
     </column>
-    <index id="21" parent="16" name="tasks_pkey">
+    <index id="23" parent="16" name="tasks_pkey">
       <ObjectId>16711</ObjectId>
       <ColNames>task_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="22" parent="16" name="tasks_pkey">
+    <key id="24" parent="16" name="tasks_pkey">
       <ObjectId>16712</ObjectId>
       <ColNames>task_id</ColNames>
       <UnderlyingIndexName>tasks_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="17" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2288</StateNumber>
+    </column>
+    <column id="26" parent="17" name="task_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2288</StateNumber>
+    </column>
+    <index id="27" parent="17" name="user_tasks_pk">
+      <ObjectId>16752</ObjectId>
+      <ColNames>user_id
+task_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="17" name="user_tasks_pk">
+      <ObjectId>16753</ObjectId>
+      <ColNames>user_id
+task_id</ColNames>
+      <UnderlyingIndexName>user_tasks_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2287</StateNumber>
+    </column>
+    <column id="30" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <StateNumber>2287</StateNumber>
+    </column>
+    <index id="31" parent="18" name="users_pkey">
+      <ObjectId>16747</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="18" name="users_pkey">
+      <ObjectId>16748</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
   </database-model>

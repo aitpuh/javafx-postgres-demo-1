@@ -1,0 +1,21 @@
+-- Create Tables
+
+create table tasks
+(
+    task_id serial not null constraint tasks_pkey primary key,
+	description text,
+	duedate timestamp,
+	complete boolean default false
+);
+
+-- Insert Some Data
+
+INSERT INTO public.tasks (task_id, description, duedate, complete) VALUES (4, 'Buy Groceries', '2017-10-26 00:00:00.000000', true);
+INSERT INTO public.tasks (task_id, description, duedate, complete) VALUES (1, 'Fix car', '2017-10-10 15:56:03.227000', true);
+INSERT INTO public.tasks (task_id, description, duedate, complete) VALUES (5, 'Homework', '2017-10-11 00:00:00.000000', false);
+INSERT INTO public.tasks (task_id, description, duedate, complete) VALUES (3, 'Go the gym', '2017-10-10 00:00:00.000000', true);
+INSERT INTO public.tasks (task_id, description, duedate, complete) VALUES (2, 'Study', '2017-10-10 00:00:00.000000', false);
+INSERT INTO public.tasks (task_id, description, duedate, complete) VALUES (7, 'Procrastinate', '2017-10-18 00:00:00.000000', false);
+
+
+
